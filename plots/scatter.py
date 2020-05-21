@@ -23,4 +23,4 @@ layout = go.Layout(title='Scatter Plot',
                     hovermode='closest')
 
 fig = go.Figure(data=data, layout=layout)
-pyo.plot(fig, filename='Scatter.html')
+pyo.plot(fig, filename=r'figure\scatter.html')

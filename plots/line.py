@@ -2,7 +2,7 @@ import numpy as np
 import plotly.offline as pyo
 import plotly.graph_objs as go
 
-np.random.seed(56)
+np.random.seed(80)
 
 x_values = np.linspace(0,1,100)
 y_values = np.random.randn(100)
@@ -30,4 +30,4 @@ data = [trace0, trace1, trace2]
 layout = go.Layout(title='Line Charts')
 
 fig = go.Figure(data=data, layout=layout)
-pyo.plot(fig, filename='plots\Line.html') 
+pyo.plot(fig, filename=r'figure\line.html') 
