@@ -30,13 +30,12 @@ Active = go.Bar(x=df['State'],
 
 data = [Confirmed, Active, Recovered]
 
-# Clustered - By default
-# Stacked Bars - barmode='stack'
+# Group -> barmode='group' - default
+# Stacked Bars -> barmode='stack'
 layout = go.Layout(title='Covid-19 (as of 26-04-2020)', 
                     xaxis=dict(title='State'),
-                    yaxis=dict(title='No. of cases')
-                    )
-
+                    yaxis=dict(title='No. of cases'),
+                    barmode='group')
 
 fig = go.Figure(data=data, layout=layout)
 pyo.plot(figure_or_data=fig, filename=r'figure\bar.html')
