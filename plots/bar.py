@@ -6,6 +6,7 @@ df = pd.read_csv(r'data\state_wise.csv')
 df = df[df['State']!='Total'].head(15)
 # print(df.head())
 
+# Column bar chart
 Confirmed = go.Bar(x=df['State'],
                     y=df['Confirmed'], 
                     name='Confirmed',
@@ -24,12 +25,18 @@ Active = go.Bar(x=df['State'],
                     marker=dict(color="Blue")
                     )
 
+# Horizontal bar chart
+# swap x and y axis in each trace i.e (Confirmed, Active, Recovered) and add orientation='h'
+
 data = [Confirmed, Active, Recovered]
 
+# Clustered - By default
+# Stacked Bars - barmode='stack'
 layout = go.Layout(title='Covid-19 (as of 26-04-2020)', 
                     xaxis=dict(title='State'),
                     yaxis=dict(title='No. of cases')
                     )
+
 
 fig = go.Figure(data=data, layout=layout)
 pyo.plot(figure_or_data=fig, filename=r'figure\bar.html')
