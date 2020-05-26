@@ -20,5 +20,8 @@ plot2 = go.Box(y=nos,
             )
 
 data = [plot1, plot2]
+layout = go.Layout(title='two random samples')
+figure = go.Figure(data,layout=layout)
 
-pyo.plot(data, filename=r'figure\box.html')
+if __name__ == "__main__":
+    pyo.plot(figure, filename=r'figure\box.html')

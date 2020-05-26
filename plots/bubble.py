@@ -45,5 +45,7 @@ layout2 = go.Layout(title='Bubble Chart',
 
 fig1 = go.Figure(data=horsepower_mpg, layout=layout1)
 fig2 = go.Figure(data=displacement_acceleration, layout=layout2)
-pyo.plot(fig1, filename=r'figure\bubble1.html')
-pyo.plot(fig2, filename=r'figure\bubble2.html')
+
+if __name__ == "__main__":
+    pyo.plot(fig1, filename=r'figure\bubble1.html')
+    pyo.plot(fig2, filename=r'figure\bubble2.html')

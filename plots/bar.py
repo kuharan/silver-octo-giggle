@@ -38,4 +38,6 @@ layout = go.Layout(title='Covid-19 (as of 26-04-2020)',
                     barmode='group')
 
 fig = go.Figure(data=data, layout=layout)
-pyo.plot(figure_or_data=fig, filename=r'figure\bar.html')
+
+if __name__ == "__main__":
+    pyo.plot(figure_or_data=fig, filename=r'figure\bar.html')
