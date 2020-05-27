@@ -1,0 +1,1 @@
+colors = {'bg':'#43464B', 'text':'#7FDBFF'}

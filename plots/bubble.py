@@ -1,9 +1,10 @@
 import plotly.offline as pyo
 import plotly.graph_objs as go
 import pandas as pd
+from config.config import colors
 
 df = pd.read_csv(r'data\mpg.csv')
-print(df.head())
+# print(df.head())
 
 horsepower_mpg = [go.Scatter(x=df['horsepower'],
                     y=df['mpg'],
@@ -34,13 +35,15 @@ displacement_acceleration = [go.Scatter(x=df['displacement'],
 layout1 = go.Layout(title='Bubble Chart',
                     hovermode='closest',
                     xaxis=dict(title='Horsepower'),
-                    yaxis=dict(title='MPG')
+                    yaxis=dict(title='MPG'),
+                    plot_bgcolor=colors['bg']
                 )
 
 layout2 = go.Layout(title='Bubble Chart',
                     hovermode='closest',
                     xaxis=dict(title='displacement'),
-                    yaxis=dict(title='acceleration')
+                    yaxis=dict(title='acceleration'),
+                    plot_bgcolor=colors['bg']
                 )
 
 fig1 = go.Figure(data=horsepower_mpg, layout=layout1)

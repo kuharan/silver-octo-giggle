@@ -1,6 +1,7 @@
 import plotly.offline as pyo
 import plotly.graph_objs as go
 import numpy as np
+from config.config import colors
 
 y = [1,14,14,15,16,18,18,19,19,20,20,23,24,26,27,27,28,29,33,54]
 nos = np.random.randint(0,50,30)
@@ -20,7 +21,7 @@ plot2 = go.Box(y=nos,
             )
 
 data = [plot1, plot2]
-layout = go.Layout(title='two random samples')
+layout = go.Layout(title='two random samples', plot_bgcolor=colors['bg'])
 figure = go.Figure(data,layout=layout)
 
 if __name__ == "__main__":

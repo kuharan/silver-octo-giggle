@@ -1,6 +1,7 @@
 import plotly.offline as pyo
 import plotly.graph_objs as go
 import pandas as pd
+from config.config import colors
 
 df = pd.read_csv(r'data\state_wise.csv')
 df = df[df['State']!='Total'].head(15)
@@ -35,7 +36,9 @@ data = [Confirmed, Active, Recovered]
 layout = go.Layout(title='Covid-19 (as of 26-04-2020)', 
                     xaxis=dict(title='State'),
                     yaxis=dict(title='No. of cases'),
-                    barmode='group')
+                    barmode='group',
+                    plot_bgcolor=colors['bg']
+                )
 
 fig = go.Figure(data=data, layout=layout)
 
