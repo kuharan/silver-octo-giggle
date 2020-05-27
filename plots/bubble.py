@@ -1,7 +1,7 @@
 import plotly.offline as pyo
 import plotly.graph_objs as go
 import pandas as pd
-from config.config import colors
+from configs.config import colors
 
 df = pd.read_csv(r'data\mpg.csv')
 # print(df.head())
@@ -36,14 +36,18 @@ layout1 = go.Layout(title='Bubble Chart',
                     hovermode='closest',
                     xaxis=dict(title='Horsepower'),
                     yaxis=dict(title='MPG'),
-                    plot_bgcolor=colors['bg']
+                    plot_bgcolor=colors['bg'],
+                    paper_bgcolor=colors['bg'],
+                    font = dict(color=colors['text'])
                 )
 
 layout2 = go.Layout(title='Bubble Chart',
                     hovermode='closest',
                     xaxis=dict(title='displacement'),
                     yaxis=dict(title='acceleration'),
-                    plot_bgcolor=colors['bg']
+                    plot_bgcolor=colors['bg'],
+                    paper_bgcolor=colors['bg'],
+                    font = dict(color=colors['text'])
                 )
 
 fig1 = go.Figure(data=horsepower_mpg, layout=layout1)

@@ -6,15 +6,15 @@ from plots.box import figure as box_figure
 from plots.bubble import fig1 as bubble1_figure, fig2 as bubble2_figure 
 from plots.line import fig as line_figure
 from plots.scatter import fig as scatter_figure
-from config.config import colors
+from configs.config import colors
 
 app = dash.Dash()
 
 app.layout = html.Div([
                     html.Div(
                         children=[
-                            html.H1('Hello Dash!', style=dict(color=colors['text'], textAlign='center')),
-                        ]
+                            html.H1('POC on Plotly - Dash!', style=dict(color=colors['text'], textAlign='center'))
+                        ]                       
                     ),
                     html.Div(
                         children=[
@@ -24,10 +24,11 @@ app.layout = html.Div([
                             dcc.Graph(id='bubble2_graph', figure=bubble2_figure),
                             dcc.Graph(id='bar_graph', figure=bar_figure),
                             dcc.Graph(id='box_graph', figure=box_figure)
-                        ]    
+                        ]
                     )
-                ]
+                ],
+                style = dict(backgroundColor=colors['bg'])
             )
 
 if __name__ == "__main__":
-    app.run_server(debug=False, port=8050)
+    app.run_server(debug=True, port=8050)

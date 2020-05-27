@@ -1,7 +1,7 @@
 import numpy as np
 import plotly.offline as pyo
 import plotly.graph_objs as go
-from config.config import colors
+from configs.config import colors
 
 np.random.seed(80)
 
@@ -28,7 +28,11 @@ trace2 = go.Scatter(x=x_values,
 
 data = [trace0, trace1, trace2]
 
-layout = go.Layout(title='Line Charts', plot_bgcolor=colors['bg'])
+layout = go.Layout(title='Line Charts', 
+                    plot_bgcolor=colors['bg'],
+                    paper_bgcolor=colors['bg'],
+                    font = dict(color=colors['text'])
+                )
 
 fig = go.Figure(data=data, layout=layout)
 

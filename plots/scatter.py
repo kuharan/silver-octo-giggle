@@ -1,7 +1,7 @@
 import numpy as np
 import plotly.offline as pyo
 import plotly.graph_objs as go
-from config.config import colors
+from configs.config import colors
 
 np.random.seed(41)
 
@@ -22,7 +22,9 @@ layout = go.Layout(title='Scatter Plot',
                     xaxis=dict(title='X Axis'),
                     yaxis=dict(title='Y Axis'),
                     hovermode='closest',
-                    plot_bgcolor=colors['bg']
+                    plot_bgcolor=colors['bg'],
+                    paper_bgcolor=colors['bg'],
+                    font = dict(color=colors['text'])
                 )
 
 fig = go.Figure(data=data, layout=layout)
