@@ -17,12 +17,14 @@ app.layout = html.Div([
                         ]
                     ),
                     html.Div(
-                        dcc.Graph(id='bar_graph', figure=bar_figure),
-                        dcc.Graph(id='box_graph', figure=box_figure),
-                        dcc.Graph(id='bubble1_graph', figure=bubble1_figure),
-                        dcc.Graph(id='bubble2_graph', figure=bubble2_figure),
-                        dcc.Graph(id='line_graph', figure=line_figure),
-                        dcc.Graph(id='scatter_graph', figure=scatter_figure)
+                        children=[
+                            dcc.Graph(id='scatter_graph', figure=scatter_figure),
+                            dcc.Graph(id='line_graph', figure=line_figure),
+                            dcc.Graph(id='bubble1_graph', figure=bubble1_figure),
+                            dcc.Graph(id='bubble2_graph', figure=bubble2_figure),
+                            dcc.Graph(id='bar_graph', figure=bar_figure),
+                            dcc.Graph(id='box_graph', figure=box_figure)
+                        ]    
                     )
                 ]
             )
