@@ -2,7 +2,7 @@
 
 Collection of basic plotly plots embedded into dash.
 
-## Create a virtual enviorment (Tested on Windows)
+## Create a virtual enviorment (Tested on Windows 10)
 
 1. ```conda create --name <virtual_env> python=3.7```
 2. ```conda activate <virtual_env>```
